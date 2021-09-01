@@ -191,9 +191,10 @@ type SystemStats struct {
 	CPU    FlexInt `json:"cpu"`
 	Mem    FlexInt `json:"mem"`
 	Uptime FlexInt `json:"uptime"`
-	// This exists on at least USG4, may others, maybe not.
+	// This exists on at least USG4, maybe others, maybe not.
+	// Fails to exist on USG4 when ubnt-util process is not running.
 	// {"Board (CPU)":"51 C","Board (PHY)":"51 C","CPU":"72 C","PHY":"77 C"}
-	Temps map[string]string `json:"temps,omitempty"`
+	Temps *map[string]string `json:"temps,omitempty"`
 }
 
 // SysStats is load info for a UDM, USG, USW.
