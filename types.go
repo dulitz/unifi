@@ -142,7 +142,7 @@ type FlexInt struct {
 }
 
 // UnmarshalJSON converts a string or number to an integer.
-// Generally, do call this directly, it's used in the json interface.
+// Generally, don't call this directly, it's used in the json interface.
 func (f *FlexInt) UnmarshalJSON(b []byte) error {
 	var unk interface{}
 
